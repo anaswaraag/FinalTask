@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-4 ">
+    <h3 class="text-black text-center">FORM</h3>
+    <form action="form" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+        <input type="text" class="form-control" name="username" placeholder="Enter Your Username">
+</div>
+    <div class="form-group">
+        <input type="date" class="form-control" name="date of birth" placeholder="Enter your date of birth">
+    </div>
+    <div class="form-group">
+    <input type="number" class="form-control" name="age" placeholder="Enter your age">
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="Gender" id="female">
+        <label class="form-check-label" >
+                    Female
+        </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="Gender" id="male">
+    <label class="form-check-label" >
+        Male
+  </label>
+   </div>
+    <div class="form-group">
+    <input type="number" class="form-control" name="number" placeholder="Enter your number">
+    </div>
+    <div class="form-group">
+    <input type="email" class="form-control" name="email" placeholder="Enter your email id">
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control" name="address" placeholder="Enter your address">
+    </div>
+    <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+     District
+    </button>
+  <ul class="dropdown-menu">
+    <a class="dropdown-item" href="#">Thiruvananthapuram</a>
+    <a class="dropdown-item" href="#">Kollam</a>
+    <a class="dropdown-item" href="#">Pathanamthitta</a>
+      <a class="dropdown-item" href="#">Alappuzha</a>
+      <a class="dropdown-item" href="#">kottyam</a>
+      <a class="dropdown-item" href="#">idukki</a>
+      <a class="dropdown-item" href="#">eranakulam</a>
+      <a class="dropdown-item" href="#">Trissur</a>
+      <a class="dropdown-item" href="#">Palakkad</a>
+      <a class="dropdown-item" href="#">Malappuram</a>
+      <a class="dropdown-item" href="#">Kozhikode</a>
+      <a class="dropdown-item" href="#">wayanad</a>
+      <a class="dropdown-item" href="#">Konnur</a>
+      <a class="dropdown-item" href="#">Kosargod</a>
+  </ul>
+    </div>
+<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+   Branches
+</button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Pattom</a></li>
+    <li><a class="dropdown-item" href="#">Aluva</a></li>
+    <li><a class="dropdown-item" href="#">Karunagapally</a></li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button"  data-bs-toggle="dropdown"  aria-expanded="false">
+    Account Type
+  </button>
+  <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Savings account</a></li>
+      <li><a class="dropdown-item" href="#">current account</a></li>
+  </ul>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="debit card">
+  <label class="form-check-label" >debit card</label>
+</div><div class="form-check">
+  <input class="form-check-input" type="checkbox" value="credit card">
+  <label class="form-check-label" >
+   credit card
+  </label>
+        </div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="cheque book">
+  <label class="form-check-label">
+    cheque book
+  </label>
+</div>
+<div class="form-group">
+<div class="d-grid gap-1 mt-3">
+    <input type="submit" value="submit"class="btn btn-dark">
+    <input type="submit" value="Logout">
+           class="btn btn-dark">
+</div>
+</div>
+        </form>
+
+                {% for message in messages %}
+                <h3>{{message}}</h3>
+                {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}
